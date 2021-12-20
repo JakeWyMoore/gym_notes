@@ -1,4 +1,7 @@
 from django.shortcuts import render, HttpResponse
 
 def index(request):
-    return HttpResponse("This is my response!")
+    return render(request, 'login.html')
+
+def register(request):
+    return render(request, 'register.html')
