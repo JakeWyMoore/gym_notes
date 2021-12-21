@@ -11,6 +11,7 @@
     <p>Already Have an Account? <a href="/">Login</a></p>
 
     <form action="/register">
+        {% csrf_token %}
         <input type="text" placeholder="First Name" name="first_name">
         <input type="text" placeholder="Last Name" name="lasst_name">
         <input type="text" placeholder="Email" name="email">

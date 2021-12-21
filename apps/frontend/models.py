@@ -1,6 +1,6 @@
 from django.db import models
 
-from sre_constants import error
+from sre_constants import GROUPREF, error
 from django.db import models
 
 import bcrypt
@@ -44,6 +44,15 @@ class User(models.Model):
     last_name = models.CharField(max_length=20)
     email = models.CharField(max_length=20)
     password = models.CharField(max_length=20)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+class workout(models.Model):
+    sets = models.CharField(max_length=50)
+    reps = models.CharField(max_length=50)
+    name = models.CharField(max_length=50)
+    group = models.CharField(max_length=50)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
