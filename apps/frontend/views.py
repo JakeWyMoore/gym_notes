@@ -35,4 +35,12 @@ def register_function(request):
             return redirect('/register')
     else:
         return redirect('/register')
+
+def dashboard(request):
+    logged_user = User.objects.get(id = request.session['user_id'])
+    
+    context = {
+        'user': logged_user
+    }
+    return render(request, 'dashboard.html', context)
             
