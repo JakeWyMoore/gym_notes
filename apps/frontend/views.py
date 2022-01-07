@@ -29,16 +29,18 @@ def register_function(request):
             )
 
             request.session['user_id'] = new_user.id
-
+            print('One')
             return redirect('/dashboard')
         else:
+            print('Two')
             return redirect('/register')
     else:
+        print('Three')
         return redirect('/register')
 
 def dashboard(request):
     logged_user = User.objects.get(id = request.session['user_id'])
-    
+
     context = {
         'user': logged_user
     }

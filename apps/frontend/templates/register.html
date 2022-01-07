@@ -10,12 +10,13 @@
     <h1>Register</h1>
     <p>Already Have an Account? <a href="/">Login</a></p>
 
-    <form action="/register">
+    <form action="/register_function" method="POST">
         {% csrf_token %}
         <input type="text" placeholder="First Name" name="first_name">
-        <input type="text" placeholder="Last Name" name="lasst_name">
+        <input type="text" placeholder="Last Name" name="last_name">
         <input type="text" placeholder="Email" name="email">
         <input type="text" placeholder="Password" name="password">
+        <input type="text" placeholder="Confirm Password" name="conf_password">
         <button type="submit">Submit</button>
     </form>
 

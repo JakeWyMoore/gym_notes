@@ -10,7 +10,7 @@
     <h1>Login</h1>
     <p>New here? <a href="/register">Regsiter</a></p>
 
-    <form action="/register">
+    <form action="/login_function" method="POST">
         {% csrf_token %}
         <input type="text" placeholder="Email" name="email">
         <input type="text" placeholder="Password" name="password">
