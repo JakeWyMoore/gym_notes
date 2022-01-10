@@ -45,4 +45,9 @@ def dashboard(request):
         'user': logged_user
     }
     return render(request, 'dashboard.html', context)
-            
+
+
+def create_workout(request):
+    return render(request, 'new_workout.html')     
+def create_workout_logic(request):
+    return render(request, 'new_workout.html')   
