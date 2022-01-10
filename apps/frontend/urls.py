@@ -8,4 +8,8 @@ urlpatterns = [
     path('login_function', views.login_function),
     path('dashboard', views.dashboard),
 
+    path('create-workout', views.create_workout),
+    path('create-workout-logic', views.create_workout_logic),
+
+
 ]
