@@ -48,12 +48,14 @@ class User(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-class workout(models.Model):
+class Workout(models.Model):
     group = models.CharField(max_length=50)
 
     sets = models.CharField(max_length=50)
     reps = models.CharField(max_length=50)
     name = models.CharField(max_length=50)
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

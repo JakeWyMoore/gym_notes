@@ -50,4 +50,12 @@ def dashboard(request):
 def create_workout(request):
     return render(request, 'new_workout.html')     
 def create_workout_logic(request):
-    return render(request, 'new_workout.html')   
+    user = User.objects.get(id = request.session['user_id'])
+    new_workout = Workout.objects.create(
+        group = request.POST['group'],
+        sets = request.POST['sets'],
+        reps = request.POST['reps'],
+        name = request.POST['name'],
+        user = user
+    )
+    return redirect('/dashboard')   
