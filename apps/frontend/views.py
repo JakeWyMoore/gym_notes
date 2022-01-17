@@ -58,4 +58,8 @@ def create_workout_logic(request):
         name = request.POST['name'],
         user = user
     )
-    return redirect('/dashboard')   
+    return redirect('/dashboard')  
+
+def logout(request):
+    request.session.flush()
+    return redirect('/')
